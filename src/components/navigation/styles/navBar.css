@@ -1,0 +1,28 @@
+@import "../../../globals.css";
+
+@layer base {
+  nav {
+    @apply flex flex-row justify-between items-center py-3 md:py-0 lg:pt-5;
+    @variant min-md {
+      @apply justify-start gap-4 lg:gap-0;
+    }
+  }
+}
+
+@layer components {
+  .nav-menu-button {
+    @apply md:hidden;
+  }
+
+  .nav-links {
+    @apply min-md:block min-md:grow hidden;
+  }
+
+  .decorative-line-container {
+    @apply hidden lg:block grow-3 relative;
+  }
+
+  .decorative-line {
+    @apply bg-white/25 h-[1px] w-full z-10 left-4 absolute;
+  }
+}

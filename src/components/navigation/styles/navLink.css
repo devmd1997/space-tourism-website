@@ -1,0 +1,32 @@
+@import "../../../globals.css";
+
+@layer components {
+  .nav-link-text {
+    @apply flex flex-row text-white text-preset-8 uppercase gap-1.5;
+  }
+
+  .nav-link-group {
+    @apply flex flex-col md:flex-row gap-4 md:gap-6 lg:gap-8;
+
+    @variant max-md {
+      @apply w-full;
+    }
+    @variant min-md {
+      @apply grow bg-white/5 backdrop-blur-[80px] justify-end items-stretch gap-4 lg:gap-6 pr-5 lg:pr-8;
+    }
+  }
+
+  .nav-link-group li {
+    /* @apply ; */
+    @variant max-md {
+      @apply border-r-3 border-transparent hover:border-white/50 py-1;
+    }
+    @variant min-md {
+      @apply flex flex-col h-full py-5 lg:py-8 justify-center items-center border-b-3 border-transparent hover:border-white/50;
+    }
+  }
+
+  .nav-link-group li.selected {
+    @apply border-white hover:border-white;
+  }
+}

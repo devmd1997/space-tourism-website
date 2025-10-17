@@ -1,0 +1,16 @@
+@import "../../../globals.css";
+
+@layer components {
+  .side-menu-container {
+    @apply absolute right-0 top-0 z-100 flex flex-col min-h-screen pl-4 py-3 gap-6 bg-dark-blur/15 backdrop-blur-[80px] w-[254px];
+    @apply transform transition-transform duration-300 ease-in-out;
+  }
+
+  .side-menu-container.closed {
+    @apply translate-x-full;
+  }
+
+  .header-container {
+    @apply flex flex-row w-full justify-end items-center pr-3;
+  }
+}

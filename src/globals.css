@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bellefair&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-blue-900: #0b0d17; /* Dark Blue */
+  --color-blue-300: #d0d6f9;
+  --color-white: #ffffff;
+
+  --color-dark-blur: #0b0d17;
+
+  --blur-defualt: 80px;
+
+  /* Font */
+  --font-bellefair: "Bellefair", serif;
+  --font-barlow: "Barlow", sans-serif;
+  --font-barlow-condensed: "Barlow Condensed", sans-serif;
+
+  --text-display-lg: 144px;
+  --text-display: 100px;
+  --text-3xl: 56px;
+  --text-2xl: 32px;
+  --text-xl: 28px;
+  --text-lg: 18px;
+  --text-base: 16px;
+  --text-sm: 14px;
+
+  /* Spacing */
+  --spacing: 8px;
+
+  --breakpoint-sm: 375px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1440px;
+
+  --radius-xs: 5px;
+  --radius-sm: 10px;
+  --radius-md: 15px;
+  --radius-lg: 25px;
+}
+
+@utility text-preset-1 {
+  font-family: var(--font-bellefair);
+  font-size: var(--text-display-lg);
+  line-height: 171.9%;
+  font-weight: normal;
+  letter-spacing: 0px;
+}
+
+@utility text-preset-2 {
+  font-family: var(--font-bellefair);
+  font-size: var(--text-display);
+  line-height: 114.8%;
+  font-weight: normal;
+  letter-spacing: 0px;
+}
+
+@utility text-preset-3 {
+  font-family: var(--font-bellefair);
+  font-size: var(--text-3xl);
+  line-height: 64.2%;
+  font-weight: normal;
+  letter-spacing: 0px;
+}
+
+@utility text-preset-4 {
+  font-family: var(--font-bellefair);
+  font-size: var(--text-2xl);
+  line-height: 36.7%;
+  font-weight: normal;
+  letter-spacing: 0px;
+}
+
+@utility text-preset-5 {
+  font-family: var(--font-barlow-condensed);
+  font-size: var(--text-xl);
+  line-height: 33.6%;
+  font-weight: normal;
+  letter-spacing: 4px;
+}
+
+@utility text-preset-6 {
+  font-family: var(--font-bellefair);
+  font-size: var(--text-lg);
+  line-height: 32.1%;
+  font-weight: normal;
+  letter-spacing: 0px;
+}
+
+@utility text-preset-7 {
+  font-family: var(--font-barlow-condensed);
+  font-size: var(--text-sm);
+  line-height: 16.8%;
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+
+@utility text-preset-8 {
+  font-family: var(--font-barlow-condensed);
+  font-size: var(--text-base);
+  line-height: 19.2%;
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+
+@utility text-preset-9 {
+  font-family: var(--font-barlow);
+  font-size: var(--text-lg);
+  line-height: 180%;
+  font-weight: normal;
+  letter-spacing: 0px;
+}
+
+@utility hpadding {
+  padding-inline: calc(var(--spacing) * 3);
+
+  @variant min-md {
+    padding-inline: calc(var(--spacing) * 5);
+  }
+
+  @variant min-lg {
+    padding-inline: calc(var(--spacing) * 20.5);
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-blue-900 relative overflow-x-hidden;
+  }
+
+  button {
+    @apply cursor-pointer;
+  }
+
+  a {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .background-layout-container {
+    @apply relative min-h-screen flex flex-col;
+  }
+
+  .background-layout-image {
+    @apply -z-50 object-cover;
+  }
+
+  .background-layout-content {
+    @apply relative z-10;
+  }
+}
