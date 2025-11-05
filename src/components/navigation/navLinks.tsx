@@ -1,8 +1,10 @@
 "use client";
-import Link from "next/link";
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
 import "./styles/navLink.css";
 import "./styles/navBar.css";
+import HoverPrefetchLink from "../common/hoverPrefetchLink";
+import { usePathname } from "next/navigation";
 
 interface NavLink {
   label: string;
@@ -29,16 +31,24 @@ const NavLinkTab = (props: NavLinkTabProps) => {
       className={`${props.isSelected ? "selected" : ""}`}
       onClick={props.onClick}
     >
-      <Link href={props.navLink.href} className={`nav-link-text`}>
+      <HoverPrefetchLink href={props.navLink.href} className={`nav-link-text`}>
         <p>{`0${props.index}`}</p>
         <p>{props.navLink.label}</p>
-      </Link>
+      </HoverPrefetchLink>
     </li>
   );
 };
 
 export default function NavLinks({ className }: { className?: string }) {
-  const [selectedIcon, setSelectedIcon] = useState(0);
+  const [selectedLink, setSelectedLink] = useState(0);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const currentFolder = navLinks.findIndex(
+      (navLink) => navLink.href === pathname
+    );
+    setSelectedLink(currentFolder);
+  }, [pathname]);
 
   return (
     <div className={className}>
@@ -46,10 +56,10 @@ export default function NavLinks({ className }: { className?: string }) {
         {navLinks.map((navLink, index) => (
           <NavLinkTab
             key={`navLink-${index}`}
-            isSelected={selectedIcon === index}
+            isSelected={selectedLink === index}
             index={index}
             navLink={navLink}
-            onClick={() => setSelectedIcon(index)}
+            onClick={() => setSelectedLink(index)}
           />
         ))}
       </ul>

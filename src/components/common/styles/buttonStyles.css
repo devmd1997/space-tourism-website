@@ -1,0 +1,9 @@
+@import "../../../globals.css";
+
+@layer components {
+  .explore-button {
+    @apply size-18 md:size-32 bg-white rounded-full flex flex-row items-center justify-center;
+    @apply text-preset-4 text-blue-900 hover:text-blue-900/50 uppercase;
+    @apply ring-88 ring-transparent hover:ring-white/10;
+  }
+}

@@ -9,8 +9,8 @@ import { useScreenSizeQuery } from "@/lib/features/useScreenSizeQuery";
 const backgroundMap: Record<string, string> = {
   "/": "/home/background-home",
   "/destination": "/destination/background-destination",
-  "/crew": "/assets/crew/background-crew",
-  "/technology": "/assets/technology/background-technology",
+  "/crew": "/crew/background-crew",
+  "/technology": "/technology/background-technology",
 };
 
 interface BackgroundLayoutProps {
@@ -50,6 +50,7 @@ export default function BackgroundLayout({ children }: BackgroundLayoutProps) {
           fill
           sizes="100vw"
           priority
+          quality={100}
           className="background-layout-image"
         />
       )}

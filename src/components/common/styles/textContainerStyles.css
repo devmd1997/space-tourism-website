@@ -1,0 +1,24 @@
+@import "../../../globals.css";
+
+@layer components {
+  .text-container-layout {
+    @apply default-text-layout gap-3 condensed:gap-2;
+  }
+
+  .text-header-container {
+    @apply default-text-layout gap-2;
+  }
+
+  .text-container-layout h1 {
+    @apply block text-preset-1 condensed:text-preset-2 explination:text-preset-3 text-white uppercase;
+  }
+
+  .text-container-layout h2 {
+    @apply block text-preset-6 display:md:text-preset-5 explination:text-preset-4 uppercase;
+    @apply text-blue-300 explination:text-white/50;
+  }
+
+  .text-container-layout p {
+    @apply text-preset-9 text-blue-300;
+  }
+}

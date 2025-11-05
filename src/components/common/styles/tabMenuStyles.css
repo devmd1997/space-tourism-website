@@ -1,0 +1,16 @@
+@import "../../../globals.css";
+
+@layer components {
+  .tab-menu {
+    @apply flex flex-row gap-4 items-center justify-around pb-4;
+  }
+
+  .tab-menu li {
+    @apply flex py-1 border-b-3 border-transparent hover:border-white/50 cursor-pointer;
+    @apply text-preset-8 text-blue-300 hover:text-white;
+  }
+
+  .tab-menu li.selected {
+    @apply border-white text-white;
+  }
+}

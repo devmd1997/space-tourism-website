@@ -26,7 +26,7 @@ export default function RootLayout({
             <BackgroundLayout>
               <>
                 <NavBar />
-                {children}
+                <main>{children}</main>
               </>
             </BackgroundLayout>
           </SideBarProvider>

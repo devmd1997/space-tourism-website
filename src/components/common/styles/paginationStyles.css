@@ -1,0 +1,36 @@
+@import "../../../globals.css";
+
+@layer components {
+  .pagination {
+    @apply cursor-pointer;
+    @variant small {
+      @apply size-[10px] lg:size-[15px] bg-white/18 hover:bg-white/50 rounded-full;
+    }
+
+    @variant large {
+      @apply size-[40px] md:size-[56px] lg:size-[80ox] rounded-full flex flex-col justify-center items-center border-1 border-white/25 hover:border-white;
+      @apply text-preset-4 text-white;
+    }
+  }
+
+  .pagination.active {
+    @variant small {
+      @apply bg-white;
+    }
+    @variant large {
+      @apply bg-white text-blue-900;
+    }
+  }
+
+  .pagination-group {
+    @apply flex flex-row justify-center items-center;
+
+    @variant small {
+      @apply gap-2 lg:gap-5;
+    }
+
+    @variant large {
+      @apply gap-2 lg:flex-col lg:gap-4;
+    }
+  }
+}
