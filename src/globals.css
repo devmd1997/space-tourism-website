@@ -311,7 +311,7 @@
   }
 
   .hero-container {
-    @apply flex flex-col md:h-full lg:flex-row grow lg:grow-0 lg:w-full items-center justify-between;
+    @apply flex flex-col md:h-full lg:flex-row grow lg:grow-0 lg:w-full items-center lg:items-end justify-between gap-6;
   }
 
   .home-explore-button-container {
